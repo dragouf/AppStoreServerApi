@@ -4,6 +4,8 @@ using JWT.Builder;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Dynamic;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -111,8 +113,8 @@ namespace AppStoreServerApi
                 case System.Net.HttpStatusCode.NotFound:
                 case System.Net.HttpStatusCode.InternalServerError:
                     var body = await result.Content.ReadAsStringAsync();
-                    var json = JsonConvert.DeserializeObject<dynamic>(body);
-                    throw new Exception(json?.errorMessage);
+                    dynamic json = JsonConvert.DeserializeObject<ExpandoObject>(body);
+                    throw new Exception(json?.errorMessage ?? "Apple server response error");
                 case System.Net.HttpStatusCode.Unauthorized:
                     this.Token = null;
                     throw new Exception("The request is unauthorized; the JSON Web Token (JWT) is invalid.");
