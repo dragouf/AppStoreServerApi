@@ -4,7 +4,7 @@ Utility to decode and verify Apple server to server in app purchase notification
 
 This library is already working but work is still in progress. Don't hesitate to contribute if you see any possible improvment or fixes.
 
-I mainly based my work on this node library: https://raw.githubusercontent.com/agisboye/app-store-server-api
+I mainly based my work on this node library: https://github.com/agisboye/app-store-server-api
 
 ## Features
 - History, subscription status and order lookup endpoints
