@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppStoreServerApi", "AppStoreServerApi\AppStoreServerApi.csproj", "{25285D8F-D975-41F3-8A95-7CEBFD54DDA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppStoreServerApi", "AppStoreServerApi\AppStoreServerApi.csproj", "{25285D8F-D975-41F3-8A95-7CEBFD54DDA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppStoreServerApi.ConsoleSample", "AppStoreServerApi.ConsoleSample\AppStoreServerApi.ConsoleSample.csproj", "{2283B52C-959F-493B-B6A6-1B85078ACACE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{25285D8F-D975-41F3-8A95-7CEBFD54DDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25285D8F-D975-41F3-8A95-7CEBFD54DDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25285D8F-D975-41F3-8A95-7CEBFD54DDA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2283B52C-959F-493B-B6A6-1B85078ACACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2283B52C-959F-493B-B6A6-1B85078ACACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2283B52C-959F-493B-B6A6-1B85078ACACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2283B52C-959F-493B-B6A6-1B85078ACACE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
