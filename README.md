@@ -1,6 +1,6 @@
 ﻿# AppleStoreServerApi
 
-Utility to decode and verify Apple server to server in app purchase notification and request Apple store api.
+Utility to decode and verify Apple server to server in app purchase notification and request [App Store Server API](https://developer.apple.com/documentation/appstoreserverapi).
 
 This library is already working but work is still in progress. Don't hesitate to contribute if you see any possible improvment or fixes.
 
