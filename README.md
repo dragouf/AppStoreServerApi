@@ -26,7 +26,7 @@ Apple's documentation currently has incorrect instructions on how to obtain this
 To get your issuer ID, you must [create an API key for App Store Connect](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api) (not the App Store Server API). Only after creating your first API key will the issuer ID appear.
 
 ### Create a client
-```
+```csharp
 var PRIVATE_KEY = @"-----BEGIN PRIVATE KEY-----
 MHcCAQEEIPWH5lyoG7Wbzv71ntF6jNvFwwJLKYmPWN/KBD4qJfMcoAoGCCqGSM49
 AwEHoUQDQgAEMOlUa/hmyAPU/RUBds6xzDO8QNrTFhFwzm8E4wxDnSAx8R9WOMnD
