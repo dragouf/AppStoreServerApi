@@ -1,4 +1,4 @@
-﻿# AppleStoreServerApi
+﻿# AppleStoreServerApi.Net
 
 Utility to decode and verify Apple server to server in app purchase notification and request [App Store Server API](https://developer.apple.com/documentation/appstoreserverapi).
 
