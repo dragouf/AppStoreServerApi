@@ -14,7 +14,7 @@ namespace AppStoreServerApi.Models
         /// <summary>
         /// UNIX timestamp in ms
         /// </summary>
-        public int? ExpiresDate { get; set; } = null!;
+        public long? ExpiresDate { get; set; } = null!;
         /// <summary>
         /// see: OwnershipType
         /// </summary>
@@ -25,23 +25,23 @@ namespace AppStoreServerApi.Models
         /// <summary>
         ///  UNIX timestamp in ms
         /// </summary>
-        public int OriginalPurchaseDate { get; set; }
+        public long OriginalPurchaseDate { get; set; }
         public string OriginalTransactionId { get; set; } = null!;
         public string ProductId { get; set; } = null!;
         /// <summary>
         /// UNIX timestamp in ms
         /// </summary>
-        public int PurchaseDate { get; set; } 
+        public long PurchaseDate { get; set; } 
         public int Quantity { get; set; }
         /// <summary>
         /// UNIX timestamp in ms
         /// </summary>
-        public int? RevocationDate { get; set; } = null!;
+        public long? RevocationDate { get; set; } = null!;
         public int? RevocationReason { get; set; } = null!;
         /// <summary>
         /// UNIX timestamp in ms
         /// </summary>
-        public int SignedDate { get; set; } 
+        public long SignedDate { get; set; } 
         public string? SubscriptionGroupIdentifier { get; set; } = null!;
         public string TransactionId { get; set; } = null!;
         /// <summary>
