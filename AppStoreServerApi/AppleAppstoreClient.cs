@@ -176,7 +176,7 @@ namespace AppStoreServerApi
                 IssuedAt = now,
                 Claims = new Dictionary<string, object> {
                     { "bid", this.BundleId },
-                    { "nonce", Guid.NewGuid() }
+                    { "nonce", Guid.NewGuid().ToString("N") }
                 },
                 SigningCredentials = new SigningCredentials(eCDsaSecurityKey, SecurityAlgorithms.EcdsaSha256)
             });
@@ -225,14 +225,15 @@ namespace AppStoreServerApi
             var handler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
             var jwtSecurityToken = handler.ReadJwtToken(token);
 
-            var x5cList = JsonConvert.DeserializeObject<List<string>>(jwtSecurityToken.Header.X5c);
+            var x5cList = ((List<object>)jwtSecurityToken.Header["x5c"])?.Select(o => o.ToString()!).ToList()
+                ?? throw new Exception("Header 'x5c' not found.");
 
             if (x5cList == null)
             {
                 throw new CertificateValidationException(new());
             }
 
-            var certs = ValidateCertificate(x5cList.ToList());
+            var certs = ValidateCertificate(x5cList);
 
             var payload = JwtBuilder.Create()
                     .WithAlgorithm(new ES256Algorithm(certs.First()))
