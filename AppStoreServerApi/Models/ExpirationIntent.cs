@@ -1,6 +1,5 @@
 ﻿namespace AppStoreServerApi.Models
 {
-
     // https://developer.apple.com/documentation/appstoreserverapi/expirationintent
     public enum ExpirationIntent
     {
