@@ -80,6 +80,12 @@ namespace AppStoreServerApi
 
             return await this.MakeRequest<HistoryResponse>($"{this.BaseUrl}/inApps/v1/history/{originalTransactionId}{query}");
         }
+        
+        // https://developer.apple.com/documentation/appstoreserverapi/get_transaction_info
+        public async Task<TransactionInfoResponse?> GetTransactionInfo(string transactionId)
+        {
+            return await this.MakeRequest<TransactionInfoResponse>($"{this.BaseUrl}/inApps/v1/transactions/{transactionId}");
+        }
 
         // https://developer.apple.com/documentation/appstoreserverapi/get_all_subscription_statuses
         public async Task<StatusResponse?> GetSubscriptionStatuses(string originalTransactionId)
