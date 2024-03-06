@@ -142,7 +142,7 @@ namespace AppStoreServerApi
             });
         }
 
-        public ECDsaSecurityKey GetEcdsaSecuritKey()
+        public ECDsaSecurityKey GetEcdsaSecurityKey()
         {
             var signatureAlgorithm = GetEllipticCurveAlgorithm();
             var eCDsaSecurityKey = new ECDsaSecurityKey(signatureAlgorithm)
@@ -163,7 +163,7 @@ namespace AppStoreServerApi
             var now = DateTime.Now;
             var expiry = now.AddSeconds(MaxTokenAge);
 
-            ECDsaSecurityKey eCDsaSecurityKey = GetEcdsaSecuritKey();
+            ECDsaSecurityKey eCDsaSecurityKey = GetEcdsaSecurityKey();
 
             var handler = new JsonWebTokenHandler();
             string jwt = handler.CreateToken(new SecurityTokenDescriptor
