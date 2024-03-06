@@ -92,6 +92,7 @@ namespace AppStoreServerApi
         }
 
         #region Request utilities
+        
         private async Task<T?> MakeRequest<T>(string url)
         {
             var token = this.GetToken();
@@ -189,6 +190,7 @@ namespace AppStoreServerApi
         #endregion
 
         #region Decode signed fields
+        
         public List<JWSTransactionDecodedPayload> DecodeTransactions(List<string> signedTransactions)
         {
             return signedTransactions.Select(s => DecodeJWS<JWSTransactionDecodedPayload>(s)).ToList();
@@ -276,6 +278,7 @@ namespace AppStoreServerApi
 
             return x509certs;
         }
+        
         #endregion
     }
 }
