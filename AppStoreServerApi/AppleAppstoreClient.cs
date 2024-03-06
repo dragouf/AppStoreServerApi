@@ -4,7 +4,6 @@ using JWT.Builder;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Dynamic;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
@@ -93,6 +92,7 @@ namespace AppStoreServerApi
         }
 
         #region Request utilities
+        
         private async Task<T?> MakeRequest<T>(string url)
         {
             var token = this.GetToken();
@@ -143,7 +143,7 @@ namespace AppStoreServerApi
             });
         }
 
-        public ECDsaSecurityKey GetEcdsaSecuritKey()
+        public ECDsaSecurityKey GetEcdsaSecurityKey()
         {
             var signatureAlgorithm = GetEllipticCurveAlgorithm();
             var eCDsaSecurityKey = new ECDsaSecurityKey(signatureAlgorithm)
@@ -164,7 +164,7 @@ namespace AppStoreServerApi
             var now = DateTime.Now;
             var expiry = now.AddSeconds(MaxTokenAge);
 
-            ECDsaSecurityKey eCDsaSecurityKey = GetEcdsaSecuritKey();
+            ECDsaSecurityKey eCDsaSecurityKey = GetEcdsaSecurityKey();
 
             var handler = new JsonWebTokenHandler();
             string jwt = handler.CreateToken(new SecurityTokenDescriptor
@@ -187,14 +187,10 @@ namespace AppStoreServerApi
             return jwt;
         }
 
-        /*private int GetUnixTimestamp(DateTime dateTime)
-        {
-            var time = (dateTime.ToUniversalTime() - new DateTime(1970, 1, 1));
-            return (int)(time.TotalMilliseconds + 0.5);
-        }*/
         #endregion
 
         #region Decode signed fields
+        
         public List<JWSTransactionDecodedPayload> DecodeTransactions(List<string> signedTransactions)
         {
             return signedTransactions.Select(s => DecodeJWS<JWSTransactionDecodedPayload>(s)).ToList();
@@ -282,6 +278,7 @@ namespace AppStoreServerApi
 
             return x509certs;
         }
+        
         #endregion
     }
 }

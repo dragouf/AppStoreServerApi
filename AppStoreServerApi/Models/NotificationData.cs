@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AppStoreServerApi.Models
+﻿namespace AppStoreServerApi.Models
 {
     public class NotificationData
     {
