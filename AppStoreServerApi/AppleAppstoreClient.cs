@@ -186,11 +186,6 @@ namespace AppStoreServerApi
             return jwt;
         }
 
-        /*private int GetUnixTimestamp(DateTime dateTime)
-        {
-            var time = (dateTime.ToUniversalTime() - new DateTime(1970, 1, 1));
-            return (int)(time.TotalMilliseconds + 0.5);
-        }*/
         #endregion
 
         #region Decode signed fields
