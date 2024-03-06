@@ -4,7 +4,6 @@ using JWT.Builder;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Dynamic;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
